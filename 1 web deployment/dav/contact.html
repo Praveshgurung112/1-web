@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="contact.css">
+    <title>contact</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">">
+</head>
+<body>
+    <div class="container">
+        <h1>Connect with us </h1>
+        <p> We would love to respond to your queries and help you succeed. <br> 
+            free to get in touch with us </p>
+
+        <div class="contact-box">
+            <div class="contact-left">
+               <h2>Sent your request</h2>
+               <form onsubmit="Mail(); reset(); return false;">
+                      <div class="input-row">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" name="Name "placeholder="name" id="Name">
+                        </div>
+                         <div class="input-group">
+                            <label>Phone</label>
+                            <input type="text" name="text" placeholder="+91" id="Phone">
+                         </div>
+                      </div>
+                          
+                      <div class="input-row">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" name="Email" placeholder="Email" id="Email">
+                        </div>
+                         <div class="input-group">
+                            <label>Subject</label>
+                            <input type="text" name="text" placeholder="Subject" id="Subject">
+                         </div>
+                      </div>
+
+                    <div>
+                      <label>Message</label>
+                      <textarea rows="2" placeholder="Your Message" id="Messages"></textarea>
+                    </div>
+                      <button type="submit">Send</button>
+               </form>
+            </div>
+            <div class="contact-right">
+               <h3> Reach Us</h3>
+                 
+               <table>
+                <tr>
+                    <td>Email</td>
+                    <td>dav_kangra@yahoo.in</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+91 01892-265002</td>
+                </tr>
+                <tr>
+                    <td>Fax no</td>
+                    <td>01892-265002</td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td>473C+WRX, College Rd, New Kangra, Kangra, Himachal Pradesh 176001</td>
+                </tr>
+                <tr>
+                    <td>Warden Girls Hostel</td>
+                    <td>01892-265003</td>
+                </tr>
+                <tr>
+                    <td>Warden Boys Hostel</td>
+                    <td>01892-265005</td>
+                </tr>
+               </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+<script>
+    function Mail(){
+
+    let name = document.getElementById("Name").value;
+    let Phone = document.getElementById("Phone").value;
+    let email = document.getElementById("Email").value;
+    let subject = document.getElementById("Subject").value;
+    let message = document.getElementById("Message")
+
+
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "gurungp344@gmail.com",
+    Password : "8A93AAEAA6740EF0E08203A1206255E6F500",
+    To : 'gurungp344@gmail.com',
+    From : "gurungp344@gmail.com",
+    Subject : "Mail from contact form",
+    Body : "Name:" + name + "<br/> User Email:" + email + "<br/> contact Number:" + Phone + "<br/> Subject:" + subject + "<br/> User Message" + message
+}).then(
+  message => alert(message)
+);
+    }   
+ </script>
+</body>
+</html>
