@@ -41,7 +41,7 @@
 
                     <div>
                       <label>Message</label>
-                      <textarea rows="2" placeholder="Your Message" id="Messages"></textarea>
+                      <textarea rows="2" input type="text" name="text" placeholder="Your Message" id="Messages"></textarea>
                     </div>
                       <button type="submit">Send</button>
                </form>
@@ -87,7 +87,7 @@
     let Phone = document.getElementById("Phone").value;
     let email = document.getElementById("Email").value;
     let subject = document.getElementById("Subject").value;
-    let message = document.getElementById("Message")
+    let message = document.getElementById("Message").value;
 
 
         Email.send({
@@ -97,7 +97,7 @@
     To : 'gurungp344@gmail.com',
     From : "gurungp344@gmail.com",
     Subject : "Mail from contact form",
-    Body : "Name:" + name + "<br/> User Email:" + email + "<br/> contact Number:" + Phone + "<br/> Subject:" + subject + "<br/> User Message" + message
+    Body : "Name:" + name + "<br/> User Email:" + email + "<br/> contact Number:" + Phone + "<br/> Subject:" + subject + "<br/> User Message:" + message
 }).then(
   message => alert(message)
 );
